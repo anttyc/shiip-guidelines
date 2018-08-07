@@ -271,6 +271,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 5. Testing
 ![Testing](/images/testing.png)
+
 * Have a `test` mode environment if needed.
 
     _Why:_
@@ -312,6 +313,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 ## 6. Structure and Naming
 ![Structure and Naming](/images/folder-tree.png)
+
 * Organize your files around product features / pages / components, not roles. Also, place your test files next to their implementation.
 
 
@@ -445,6 +447,64 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > While `prettier` itself can be very powerful, it's not very productive to run it simply as an npm task alone each time to format code. This is where `lint-staged` (and `husky`) come into play. Read more on configuring `lint-staged` [here](https://github.com/okonet/lint-staged#configuration) and on configuring `husky` [here](https://github.com/typicode/husky).
 
+### 7.3 React Coding Guidelines
+
+* Pass/define props in alphabetical order
+
+* Similarly for destructuring, define variables in alphabetical order
+
+* Group imports with a line break for lib imports and common ui imports
+
+* The start and end of JSX components should be on the same indentation level if they span multiple lines.
+
+* Use ternary operators when adding logic inside a JSX component (single line only), or separate it out into its own variable if it's multi-line
+
+* When specifying props for a component, keep values on 1 line when possible. When you have too many props to fit on one line, group them on subsequent lines 1 tab level further in. (We can use the object spread operator to help alleviate the wordy props)
+
+* Define each variable on a new line.
+
+* Longer lines needs to be broken into multiple lines for readability.
+
+* Methods in class should be in order like - constructor, getInitialProps, private methods and lastly render method.
+
+* Use Higher Order/Util functions over imperative code
+
+* JSX examples
+```
+return <MyButton color="blue" shadowSize={2}>{buttonText}</MyButton>;
+return (
+    <MyButton color="blue" shadowSize={2}>
+        {buttonText}
+    </MyButton>
+);
+const showMyButton = false;
+let myButton = null;
+if (showMyButton) {
+    myButton = (
+        <MyButton color="blue" shadowSize={2}>
+            {buttonText}
+        </MyButton>
+    );
+}
+return (
+    <div>
+        {myButton}
+        <OtherComponent />
+    </div>
+);
+return (
+    <div>
+        <OtherComponent {...{ propOb1, propObj2, obj: otherObj}} />
+    </div>
+);
+```
+
+* Event Handling
+    * We should use a consistent naming convention for all our event bindings.
+    * If a particular component supports an event, the prop should be named to
+match. (onClick_setValue event, use onClick as the prop)
+    * If you're supporting events from multiple components, you should append the component name to the handler.
+    * To set the *this​* context for the Event handler methods. Use bind in constructor. Eg: this.foo = this.foo.bind(this)
 
 ## 8. Logging
 
