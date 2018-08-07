@@ -23,10 +23,8 @@
     - [API documentation](#api-documentation)
 - [Licensing](#licensing)
 
-<a name="git"></a>
 ## 1. Git
 ![Git](/images/branching.png)
-<a name="some-git-rules"></a>
 
 ### 1.1 Some Git rules
 There are a set of rules to keep in mind:
@@ -70,7 +68,6 @@ There are a set of rules to keep in mind:
     _Why:_
     > It protects your production-ready branches from receiving unexpected and irreversible changes. read more... [Github](https://help.github.com/articles/about-protected-branches/), [Bitbucket](https://confluence.atlassian.com/bitbucketserver/using-branch-permissions-776639807.html) and [GitLab](https://docs.gitlab.com/ee/user/project/protected_branches.html)
 
-<a name="git-workflow"></a>
 ### 1.2 Git workflow
 Because of most of the reasons above, we use [Feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) with [Interactive Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing) and some elements of [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow) (naming and having a develop branch). The main steps are as follows:
 
@@ -136,7 +133,6 @@ Because of most of the reasons above, we use [Feature-branch-workflow](https://w
   git fetch -p && for branch in `git branch -vv --no-color | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
   ```
 
-<a name="writing-good-commit-messages"></a>
 ### 1.3 Writing good commit messages
 
 Having a good guideline for creating commits and sticking to it makes working with Git and collaborating with others a lot easier. Here are some rules of thumb ([source](https://chris.beams.io/posts/git-commit/#seven-rules)):
@@ -161,7 +157,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
  * Use the body to explain **what** and **why** as opposed to **how**.
 
- <a name="documentation"></a>
+
 ## 2. Documentation
 
 ![Documentation](/images/documentation.png)
@@ -175,7 +171,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
 * Don't use clean code as an excuse to not comment at all.
 * Keep comments relevant as your code evolves.
 
-<a name="environments"></a>
 ## 3. Environments
 
 ![Environments](/images/laptop.png)
@@ -201,7 +196,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > It may save others from hours of troubleshooting.
 
-<a name="consistent-dev-environments"></a>
 ### 3.1 Consistent dev environments:
 * Set your node version in `engines` in `package.json`.
     
@@ -229,7 +223,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
     > Lets you share your tooling with your colleague instead of expecting them to have it globally on their systems.
 
 
-<a name="consistent-dependencies"></a>
 ### 3.2 Consistent dependencies:
 
 * Make sure your team members get the exact same dependencies as you.
@@ -246,7 +239,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _I don't like the name `Yarn`:_
     > Too bad. For older versions of `npm`, use `—save --save-exact` when installing a new dependency and create `npm-shrinkwrap.json` before publishing. [read more...](https://docs.npmjs.com/files/package-locks)
 
-<a name="dependencies"></a>
 ## 4. Dependencies
 
 ![Github](/images/modules.png)
@@ -276,7 +268,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
 * Check to see if the package has known security vulnerabilities with, e.g., [Snyk](https://snyk.io/test?utm_source=risingstack_blog).
 
 
-<a name="testing"></a>
 ## 5. Testing
 ![Testing](/images/testing.png)
 * Have a `test` mode environment if needed.
@@ -318,7 +309,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > It's a handy note you leave behind for other developers or DevOps experts or QA or anyone who gets lucky enough to work on your code.
 
-<a name="structure-and-naming"></a>
 ## 6. Structure and Naming
 ![Structure and Naming](/images/folder-tree.png)
 * Organize your files around product features / pages / components, not roles. Also, place your test files next to their implementation.
@@ -376,12 +366,10 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     >Name it what you like, `dist` is also cool. But make sure that keep it consistent with your team. What gets in there is most likely generated  (bundled, compiled, transpiled) or moved there. What you can generate, your teammates should be able to generate too, so there is no point committing them into your remote repository. Unless you specifically want to. 
 
-<a name="code-style"></a>
 ## 7. Code style
 
 ![Code style](/images/code-style.png)
 
-<a name="code-style-check"></a>
 ### 7.1 Some code style guidelines
 
 * Use stage-2 and higher JavaScript (modern) syntax for new projects. For old project stay consistent with existing syntax unless you intend to modernise the project.
@@ -437,7 +425,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > It makes it more natural to read the source code.
 
-<a name="enforcing-code-style-standards"></a>
 ### 7.2 Enforcing code style standards
 
 * Use a [.editorconfig](http://editorconfig.org/) file which helps developers define and maintain consistent coding styles between different editors and IDEs on the project.
@@ -458,7 +445,6 @@ Having a good guideline for creating commits and sticking to it makes working wi
     > While `prettier` itself can be very powerful, it's not very productive to run it simply as an npm task alone each time to format code. This is where `lint-staged` (and `husky`) come into play. Read more on configuring `lint-staged` [here](https://github.com/okonet/lint-staged#configuration) and on configuring `husky` [here](https://github.com/typicode/husky).
 
 
-<a name="logging"></a>
 ## 8. Logging
 
 ![Logging](/images/logging.png)
@@ -475,9 +461,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     > It makes your troubleshooting less unpleasant with colorization, timestamps, log to a file in addition to the console or even logging to a file that rotates daily. [read more...](https://blog.risingstack.com/node-js-logging-tutorial/)
 
 
-<a name="api"></a>
 ## 9. API
-<a name="api-design"></a>
 
 ![API](/images/api.png)
 
@@ -659,7 +643,6 @@ The **client app did something wrong** or The **API did something wrong**.
     ```
 * Pagination, filtering, and sorting don’t need to be supported from start for all resources. Document those resources that offer filtering and sorting.
 
-<a name="api-security"></a>
 ### 9.2 API security
 These are some basic security best practices:
 
@@ -697,7 +680,6 @@ These are some basic security best practices:
 
 * Check the API Security Checklist Project. [read more...](https://github.com/shieldfy/API-Security-Checklist)
 
-<a name="api-documentation"></a>
 ### 9.3 API documentation
 * Fill the `API Reference` section in [README.md template](./README.sample.md) for API.
 * Describe API authentication methods with a code sample.
@@ -732,7 +714,6 @@ For each endpoint explain:
 
 * Use API design tools, There are lots of open source tools for good documentation such as [API Blueprint](https://apiblueprint.org/) and [Swagger](https://swagger.io/).
 
-<a name="licensing"></a>
 ## 10. Licensing
 ![Licensing](/images/licensing.png)
 
