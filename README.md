@@ -28,6 +28,7 @@
 
 ### 1.1 Some Git rules
 There are a set of rules to keep in mind:
+
 * Perform work in a feature branch.
     
     _Why:_
