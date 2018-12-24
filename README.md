@@ -70,7 +70,7 @@ There are a set of rules to keep in mind:
     _Why:_
     > It protects your production-ready branches from receiving unexpected and irreversible changes. read more... [Github](https://help.github.com/articles/about-protected-branches/), [Bitbucket](https://confluence.atlassian.com/bitbucketserver/using-branch-permissions-776639807.html) and [GitLab](https://docs.gitlab.com/ee/user/project/protected_branches.html)
 
-### 1.2 Git workflow
+### 1.2 <a name="git-workflow">Git worlflow</a>
 Because of most of the reasons above, we use [Feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) with [Interactive Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing) and some elements of [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow) (naming and having a develop branch). The main steps are as follows:
 
 * For a new project, initialize a git repository in the project directory. __For subsequent features/changes this step should be ignored__.
@@ -135,7 +135,7 @@ Because of most of the reasons above, we use [Feature-branch-workflow](https://w
   git fetch -p && for branch in `git branch -vv --no-color | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
   ```
 
-### 1.3 Writing good commit messages
+### <a name="writing-good-commit-messages">1.3 Writing good commit messages</a>
 
 Having a good guideline for creating commits and sticking to it makes working with Git and collaborating with others a lot easier. Here are some rules of thumb ([source](https://chris.beams.io/posts/git-commit/#seven-rules)):
 
@@ -160,7 +160,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
  * Use the body to explain **what** and **why** as opposed to **how**.
 
 
-## 2. Documentation
+## <a name="documentation">2. Documentation</a>
 
 ![Documentation](/images/documentation.png)
 
@@ -173,7 +173,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 * Don't use clean code as an excuse to not comment at all.
 * Keep comments relevant as your code evolves.
 
-## 3. Environments
+## <a name="environments">3. Environments</a>
 
 ![Environments](/images/laptop.png)
 
@@ -198,7 +198,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > It may save others from hours of troubleshooting.
 
-### 3.1 Consistent dev environments:
+### <a name="consistent-dev-environments">3.1 Consistent dev environments</a>
 * Set your node version in `engines` in `package.json`.
     
     _Why:_
@@ -225,7 +225,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     > Lets you share your tooling with your colleague instead of expecting them to have it globally on their systems.
 
 
-### 3.2 Consistent dependencies:
+### <a name="consistent-dependencies">3.2 Consistent dependencies</a>
 
 * Make sure your team members get the exact same dependencies as you.
 
@@ -241,7 +241,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _I don't like the name `Yarn`:_
     > Too bad. For older versions of `npm`, use `—save --save-exact` when installing a new dependency and create `npm-shrinkwrap.json` before publishing. [read more...](https://docs.npmjs.com/files/package-locks)
 
-## 4. Dependencies
+## <a name="dependencies">4. Dependencies</a>
 
 ![Github](/images/modules.png)
 
@@ -270,7 +270,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
 * Check to see if the package has known security vulnerabilities with, e.g., [Snyk](https://snyk.io/test?utm_source=risingstack_blog).
 
 
-## 5. Testing
+## <a name="testing">5. Testing</a>
 ![Testing](/images/testing.png)
 
 * Have a `test` mode environment if needed.
@@ -312,7 +312,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > It's a handy note you leave behind for other developers or DevOps experts or QA or anyone who gets lucky enough to work on your code.
 
-## 6. Structure and Naming
+## <a name="structure-and-naming">6. Structure and Naming</a>
 ![Structure and Naming](/images/folder-tree.png)
 
 * Organize your files around product features / pages / components, not roles. Also, place your test files next to their implementation.
@@ -376,11 +376,11 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     >Name it what you like, `dist` is also cool. But make sure that keep it consistent with your team. What gets in there is most likely generated  (bundled, compiled, transpiled) or moved there. What you can generate, your teammates should be able to generate too, so there is no point committing them into your remote repository. Unless you specifically want to. 
 
-## 7. Code style
+## <a name="code-style">7. Code style</a>
 
 ![Code style](/images/code-style.png)
 
-### 7.1 Some code style guidelines
+### <a name="some-code-style-guidelines">7.1 Some code style guidelines</a>
 
 * Use stage-2 and higher JavaScript (modern) syntax for new projects. For old project stay consistent with existing syntax unless you intend to modernise the project.
 
@@ -435,7 +435,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > It makes it more natural to read the source code.
 
-### 7.2 Enforcing code style standards
+### <a name="enforcing-code-style-standards">7.2 Enforcing code style standards</a>
 
 * Use a [.editorconfig](http://editorconfig.org/) file which helps developers define and maintain consistent coding styles between different editors and IDEs on the project.
 
@@ -454,7 +454,7 @@ Having a good guideline for creating commits and sticking to it makes working wi
     _Why:_
     > While `prettier` itself can be very powerful, it's not very productive to run it simply as an npm task alone each time to format code. This is where `lint-staged` (and `husky`) come into play. Read more on configuring `lint-staged` [here](https://github.com/okonet/lint-staged#configuration) and on configuring `husky` [here](https://github.com/typicode/husky).
 
-### 7.3 React Coding Guidelines
+### <a name="react-coding-guidelines">7.3 React Coding Guidelines</a>
 
 * Pass/define props in alphabetical order
 
@@ -513,7 +513,7 @@ match. (onClick_setValue event, use onClick as the prop)
     * If you're supporting events from multiple components, you should append the component name to the handler.
     * To set the *this​* context for the Event handler methods. Use bind in constructor. Eg: this.foo = this.foo.bind(this)
 
-## 8. Logging
+## <a name="logging">8. Logging</a>
 
 ![Logging](/images/logging.png)
 
@@ -529,11 +529,11 @@ match. (onClick_setValue event, use onClick as the prop)
     > It makes your troubleshooting less unpleasant with colorization, timestamps, log to a file in addition to the console or even logging to a file that rotates daily. [read more...](https://blog.risingstack.com/node-js-logging-tutorial/)
 
 
-## 9. API
+## <a name="api">9. API</a>
 
 ![API](/images/api.png)
 
-### 9.1 API design
+### <a name="api-design">9.1 API design</a>
 
 _Why:_
 > Because we try to enforce development of sanely constructed RESTful interfaces, which team members and clients can consume simply and consistently.  
@@ -711,7 +711,7 @@ The **client app did something wrong** or The **API did something wrong**.
     ```
 * Pagination, filtering, and sorting don’t need to be supported from start for all resources. Document those resources that offer filtering and sorting.
 
-### 9.2 API security
+### <a name="api-security">9.2 API security</a>
 These are some basic security best practices:
 
 * Don't use basic authentication unless over a secure connection (HTTPS). Authentication tokens must not be transmitted in the URL: `GET /user/123?token=asdf....`
@@ -748,7 +748,7 @@ These are some basic security best practices:
 
 * Check the API Security Checklist Project. [read more...](https://github.com/shieldfy/API-Security-Checklist)
 
-### 9.3 API documentation
+### <a name="api-documentation">9.3 API documentation</a>
 * Fill the `API Reference` section in [README.md template](./README.sample.md) for API.
 * Describe API authentication methods with a code sample.
 * Explaining The URL Structure (path only, no root URL) including The request type (Method).
@@ -782,7 +782,7 @@ For each endpoint explain:
 
 * Use API design tools, There are lots of open source tools for good documentation such as [API Blueprint](https://apiblueprint.org/) and [Swagger](https://swagger.io/).
 
-## 10. Licensing
+## <a name="licensing">10. Licensing</a>
 ![Licensing](/images/licensing.png)
 
 Make sure you use resources that you have the rights to use. If you use libraries, remember to look for MIT, Apache or BSD but if you modify them, then take a look at the license details. Copyrighted images and videos may cause legal problems.
