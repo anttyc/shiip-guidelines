@@ -2,11 +2,11 @@
 
 # Project Guidelines [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-- [Git](#git)
-    - [Some Git rules](#some-git-rules)
-    - [Git workflow](#git-workflow)
-    - [Writing good commit messages](#writing-good-commit-messages)
-- [Documentation](#documentation)
+- 1. [Git](#git)
+    - 1.1 [Some Git rules](#some-git-rules)
+    - 1.2 [Git workflow](#git-workflow)
+    - 1.3 [Writing good commit messages](#writing-good-commit-messages)
+- 2. [Documentation](#documentation)
 - [Environments](#environments)
     - [Consistent dev environments](#consistent-dev-environments)
     - [Consistent dependencies](#consistent-dependencies)
