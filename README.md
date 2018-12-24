@@ -3,30 +3,31 @@
 # Project Guidelines [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 - [1. Git](#git)
-    - 1.1 [Some Git rules](#some-git-rules)
-    - 1.2 [Git workflow](#git-workflow)
-    - 1.3 [Writing good commit messages](#writing-good-commit-messages)
-- 2. [Documentation](#documentation)
-- [Environments](#environments)
-    - [Consistent dev environments](#consistent-dev-environments)
-    - [Consistent dependencies](#consistent-dependencies)
-- [Dependencies](#dependencies)
-- [Testing](#testing)
-- [Structure and Naming](#structure-and-naming)
-- [Code style](#code-style)
-    - [Some code style guidelines](#code-style-check)
-    - [Enforcing code style standards](#enforcing-code-style-standards)
-- [Logging](#logging)
-- [API](#api)
-    - [API design](#api-design)
-    - [API security](#api-security)
-    - [API documentation](#api-documentation)
-- [Licensing](#licensing)
+    - [1.1 Some Git rules](#some-git-rules)
+    - [1.2 Git workflow](#git-workflow)
+    - [1.3 Writing good commit messages](#writing-good-commit-messages)
+- [2. Documentation](#documentation)
+- [3. Environments](#environments)
+    - [3.1 Consistent dev environments](#consistent-dev-environments)
+    - [3.2 Consistent dependencies](#consistent-dependencies)
+- [4. Dependencies](#dependencies)
+- [5. Testing](#testing)
+- [6. Structure and Naming](#structure-and-naming)
+- [7. Code style](#code-style)
+    - [7.1 Some code style guidelines](#code-style-check)
+    - [7.2 Enforcing code style standards](#enforcing-code-style-standards)
+    - [7.3 React Coding Guidelines](#react-coding-guidelines)
+- [8. Logging](#logging)
+- [9. API](#api)
+    - [9.1 API design](#api-design)
+    - [9.2 API security](#api-security)
+    - [9.3 API documentation](#api-documentation)
+- [101. Licensing](#licensing)
 
 ## 1. Git
 ![Git](/images/branching.png)
 
-### 1.1 Some Git rules
+### <a name="some-git-rules">1.1 Some Git rules</a>
 There are a set of rules to keep in mind:
 
 * Perform work in a feature branch.
@@ -333,6 +334,12 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
     ```
     .
+    ├── shared
+    |   ├── modal.js
+    |   └── button.js
+    ├── models
+    |   ├── product.js
+    |   └── user.js
     ├── product
     |   ├── index.js
     |   ├── product.js
