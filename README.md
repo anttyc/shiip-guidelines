@@ -2,7 +2,7 @@
 
 # Project Guidelines [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-- 1. [Git](#git)
+- [1. Git](#git)
     - 1.1 [Some Git rules](#some-git-rules)
     - 1.2 [Git workflow](#git-workflow)
     - 1.3 [Writing good commit messages](#writing-good-commit-messages)
