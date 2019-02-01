@@ -6,6 +6,7 @@
     - [1.1 Some Git rules](#some-git-rules)
     - [1.2 Git workflow](#git-workflow)
     - [1.3 Writing good commit messages](#writing-good-commit-messages)
+    - [1.4 Creating Pull Requests](#creating-pull-requests)
 - [2. Documentation](#documentation)
 - [3. Environments](#environments)
     - [3.1 Consistent dev environments](#consistent-dev-environments)
@@ -164,11 +165,9 @@ Having a good guideline for creating commits and sticking to it makes working wi
 ### <a name="creating-pull-requests">1.4 Creating Pull Requests</a>
 
 * The Pull Request Title should be descriptive of the Issue(s) Fixed and the purpose of the PR
-    Issue #'s Descriptive title of PR
-    `e.g: SHP-XXX SHP-XXX Implement User Journey for ____`
+    > `e.g: SHP-XXX SHP-XXX Implement User Journey for ____`
      
 * The Pull Request Description should have a list of all the stories updated, what the PR addresses and Other chages that did not have a corresponding ticket.
-    Sample Template
     ```
     ## Issues fixed in this PR
     SHP-XXX As a ____, I would like to be able to ____, so that I can ____
