@@ -1,0 +1,8 @@
+
+  "title": [
+    {
+      "pattern": "SHP-\\d{1,4}|Hotfix|Chore",
+      "message": "You need a JIRA ticket number / Hotfix: / Chore: in your Title"
+    }
+  ]
+}
