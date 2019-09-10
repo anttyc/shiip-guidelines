@@ -2,6 +2,8 @@
 
 # Project Guidelines [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
+https://engineering.videoblocks.com/these-four-clean-code-tips-will-dramatically-improve-your-engineering-teams-productivity-b5bd121dd150
+
 - [1. Git](#git)
     - [1.1 Some Git rules](#some-git-rules)
     - [1.2 Git workflow](#git-workflow)
