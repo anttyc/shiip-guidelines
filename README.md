@@ -140,28 +140,106 @@ Because of most of the reasons above, we use [Feature-branch-workflow](https://w
 
 ### <a name="writing-good-commit-messages">1.3 Writing good commit messages</a>
 
-Having a good guideline for creating commits and sticking to it makes working with Git and collaborating with others a lot easier. Here are some rules of thumb ([source](https://chris.beams.io/posts/git-commit/#seven-rules)):
+About the standard for writing commit messages. These can be validated with tools like commitlint and even auto-generated - see [Auto Commit Message](https://github.com/MichaelCurrin/auto-commit-msg) for VS Code.
 
- * Separate the subject from the body with a newline between the two.
+#### Overview
 
-    _Why:_
-    > Git is smart enough to distinguish the first line of your commit message as your summary. In fact, if you try git shortlog, instead of git log, you will see a long list of commit messages, consisting of the id of the commit, and the summary only.
+From the homepage:
 
- * Limit the subject line to 50 characters and Wrap the body at 72 characters.
+> A specification for adding human and machine readable meaning to commit messages
+> 
 
-    _why_
-    > Commits should be as fine-grained and focused as possible, it is not the place to be verbose. [read more...](https://medium.com/@preslavrachev/what-s-with-the-50-72-rule-8a906f61f09c)
+`<type>[optional scope]: <description>
 
- * Capitalize the subject line.
- * Do not end the subject line with a period.
- * Use [imperative mood](https://en.wikipedia.org/wiki/Imperative_mood) in the subject line.
- * Always have the related Issue # in the subject line
+[optional body]
 
-    _Why:_
-    > Rather than writing messages that say what a committer has done. It's better to consider these messages as the instructions for what is going to be done after the commit is applied on the repository. [read more...](https://news.ycombinator.com/item?id=2079612)
+[optional footer]`
 
+#### Resources
 
- * Use the body to explain **what** and **why** as opposed to **how**.
+- [Conventional Commits](https://www.conventionalcommits.org/) homepage
+    - See this to learn more on writing Conventional Commits messages. The *Summary* section covers the prefixes used here.
+- [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
+    - In the Angular Contributing doc. The standard came out of Angular.
+- Emojis
+    - [Gitmoji](https://gitmoji.dev/) site
+        - For a standard of using emojis in commits.
+    - [Git log emoji](https://github.com/MichaelCurrin/emoji-resources/blob/main/git-log-emoji.md)
+        - An alias I came up with to prettify your commit log view without actually inserting emojis into commit messages.
+- [udacity.github.io/git-styleguide](https://udacity.github.io/git-styleguide/)
+
+#### Type
+
+A prefix for the commit message describing the type of the change.
+
+#### Type values allowed
+
+This should be only one of the types defined in the standard.
+
+I’ve grouped them as they make sense to me.
+
+- Core
+    - `feat` - feature
+    - `fix`
+    - `style`
+    - `refactor`
+    - `build`
+    - `perf` - performance
+- Supplemental (the app can still run locally without these)
+    - `ci` - update workflow for CI.
+    - `docs`
+    - `test` - relating to running tests.
+- `chore` - like configs and file renames or moves.
+- `revert`
+
+Check these pages to see officially allowed types.
+
+- [Type](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type) section on the Angular repo. This is linked from the Conventional Commits website as “Angular Convention”. It explains what `build` etc. means.
+- [Allowed types](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum) defined in the docs of the `config-conventional` section of the `commitlint` repo. This presumably works closely or exactly to the Angular standard.
+
+#### Resources
+
+Here are some less offical guides for more help.
+
+- [seesparkbox.com/foundry/semantic_commit_messages](https://seesparkbox.com/foundry/semantic_commit_messages)
+- [hackwild.com/article/semantic-git-commits](https://hackwild.com/article/semantic-git-commits/)
+- [karma-runner.github.io/1.0/dev/git-commit-msg.html](https://karma-runner.github.io/1.0/dev/git-commit-msg.html)
+
+#### Examples
+
+Here is an example of the feature type used as a prefix.
+
+`feat: add foo`
+
+A documentation change:
+
+`docs: fix typo in foo.md and bar.md`
+
+From the docs:
+
+> Commits MUST be prefixed with a type, which consists of a noun, feat, fix, etc., followed by a colon and a space.
+> 
+
+#### Scope
+
+The standard defines use of an optional scope, which is used in additional to the required type.
+
+From the docs:
+
+> An optional scope MAY be provided after a type.A scope is a phrase describing a section of the codebase enclosed in parenthesis.e.g. ‘fix(parser):’ This would be specific to a particular project, so you cannot know the generalize scopes for all projects. The standard says you should agree in your team what the scopes would be. Perhaps based on features, projects or directories.
+> 
+
+I believe there are some scope values which do generalize well.
+
+All dependency changes can have scope of `deps`.
+
+Some possible examples.
+
+`build(deps): upgrade packages
+style(deps): remove whitespace in requirements.txt
+fix(deps): correct typo in package.json package name`
+
+Perhaps updating test dependencies would be under test rather than build.
  
  
 ### <a name="creating-pull-requests">1.4 Creating Pull Requests</a>
